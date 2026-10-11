@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#0d0f10" />
+    <meta name="description" content="A small top-down tank driving and shooting game on a 5 × 5 km map, built on a classic 2D rigid-body vehicle model." />
+    <title>Tank Lab</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <canvas id="game" aria-label="Tank Lab game view"></canvas>
+
+    <div id="hud">
+      <div class="top-left">
+        <div class="brand">TANK<span>·</span>LAB</div>
+        <div class="panel stats">
+          <div><label>Targets</label><b id="hud-targets">0 / 0</b></div>
+          <div><label>Destroyed</label><b id="hud-destroyed">0</b></div>
+          <div><label>Time</label><b id="hud-time">0:00</b></div>
+        </div>
+      </div>
+
+      <div class="top-right">
+        <div class="toolbar">
+          <button data-key="KeyZ" id="btn-z" title="Camera dead zone (Z)">Z · on</button>
+          <button data-key="KeyX" id="btn-x" title="Speed zoom (X)">X · on</button>
+          <button data-key="KeyM" title="Full map (M)">Map</button>
+          <button data-key="KeyN" id="btn-n" title="Sound (N)">Sound · on</button>
+          <button data-key="KeyR" title="Back to start (R)">Reset · R</button>
+          <button data-key="KeyH" title="Help (H)">Help</button>
+        </div>
+        <canvas id="minimap" width="200" height="200"></canvas>
+      </div>
+
+      <div class="bottom-left panel gauges">
+        <div class="speed"><b id="hud-speed">0</b><span>km/h</span></div>
+        <div class="row"><label>Surface</label><span id="hud-surface">—</span></div>
+        <div class="row"><label>Grid</label><span id="hud-grid">—</span></div>
+        <div class="reload"><div id="hud-reload"></div></div>
+        <div class="row"><label>Gun</label><span id="hud-gun">Ready</span></div>
+      </div>
+
+      <div id="toast"></div>
+      <div class="footer">Tank Lab · v1.0 · WASD drive · Mouse aim · Click / Space fire · H help</div>
+    </div>
+
+    <div id="help" class="overlay hidden">
+      <div class="card">
+        <h1>Tank Lab</h1>
+        <p class="lead">
+          Drive a 30-tonne tank around a 5 × 5 km world. Destroy the
+          <b class="accent">red &amp; white targets</b> scattered across the map — six of them sit on the
+          firing range just north of the training ground.
+        </p>
+        <div class="cols">
+          <ul>
+            <li><kbd>W</kbd><kbd>S</kbd> / <kbd>↑</kbd><kbd>↓</kbd> Drive / reverse</li>
+            <li><kbd>A</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd> Skid-steer</li>
+            <li><kbd>Shift</kbd> Brake (lock tracks)</li>
+            <li><kbd>Mouse</kbd> Aim turret · <kbd>Q</kbd><kbd>E</kbd> rotate turret</li>
+            <li><kbd>Click</kbd> / <kbd>Space</kbd> / <kbd>F</kbd> Fire</li>
+          </ul>
+          <ul>
+            <li><kbd>Wheel</kbd> / <kbd>+</kbd><kbd>−</kbd> Zoom</li>
+            <li><kbd>Z</kbd> Camera dead zone · <kbd>X</kbd> Speed zoom</li>
+            <li><kbd>M</kbd> Full map · <kbd>N</kbd> Sound</li>
+            <li><kbd>R</kbd> Back to start · <kbd>P</kbd> Pause</li>
+            <li><kbd>H</kbd> This help</li>
+          </ul>
+        </div>
+        <p class="small">
+          Shells knock props around, set barrels off, fell trees and bring down buildings. Ram crates and
+          trees at speed to flatten them. Roads are fast, fields and sand are slow, and hills push back.
+        </p>
+        <p class="small">
+          The handling is built on a classic 2D rigid-body vehicle model: each track contact point resists
+          sliding sideways much more than rolling forwards, and the tank turns by driving its two tracks at
+          different speeds.
+        </p>
+        <button id="help-close" class="primary">Roll out</button>
+      </div>
+    </div>
+
+    <div id="bigmap" class="overlay hidden">
+      <div class="mapwrap">
+        <canvas id="bigmap-canvas"></canvas>
+        <div class="legend">
+          <span><i class="dot target"></i>Target</span>
+          <span><i class="dot tank"></i>You</span>
+          <span><i class="sw road"></i>Road</span>
+          <span><i class="sw dirt"></i>Dirt track</span>
+          <span><i class="sw bld"></i>Building</span>
+          <span>Grid squares: 500 m · press M to close</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="touch" class="hidden">
+      <div id="stick"><div id="knob"></div></div>
+      <div class="tbtns">
+        <button id="t-tl">◀</button>
+        <button id="t-fire">FIRE</button>
+        <button id="t-tr">▶</button>
+        <button id="t-brake">Brake</button>
+      </div>
+    </div>
+
+    <div id="paused" class="overlay hidden"><div class="card small-card"><h2>Paused</h2><p>Press P to continue</p></div></div>
+
+    <div id="loading" class="overlay">
+      <div class="card small-card">
+        <div class="brand big">TANK<span>·</span>LAB</div>
+        <p id="loading-text">Loading…</p>
+        <div class="bar"><div id="loading-bar"></div></div>
+      </div>
+    </div>
+
+    <script src="js/core.js"></script>
+    <script src="js/tank.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

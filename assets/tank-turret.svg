@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="260" viewBox="0 0 340 260">
+  <!-- Tank Lab turret, top view, gun facing right. Turret pivot at (175,130). -->
+  <defs>
+    <radialGradient id="turret" cx="0.38" cy="0.32" r="0.8">
+      <stop offset="0" stop-color="#a1ad6c"/>
+      <stop offset="0.55" stop-color="#76834a"/>
+      <stop offset="1" stop-color="#4e5830"/>
+    </radialGradient>
+    <linearGradient id="mant" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d8a50"/>
+      <stop offset="1" stop-color="#4a542d"/>
+    </linearGradient>
+  </defs>
+  <!-- rear stowage basket -->
+  <path d="M8 70 H40 V190 H8 Z" fill="none" stroke="#3a4124" stroke-width="5"/>
+  <path d="M8 100 H40 M8 130 H40 M8 160 H40" stroke="#3a4124" stroke-width="3"/>
+  <rect x="12" y="104" width="24" height="52" rx="3" fill="#6b5f43" opacity="0.9"/>
+  <!-- turret shell -->
+  <path d="M30 62 L78 24 L232 14 L302 52 L326 98 L326 162 L302 208 L232 246 L78 236 L30 198 Z"
+        fill="url(#turret)" stroke="#262b16" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M232 14 L240 130 L232 246" fill="none" stroke="#5b6739" stroke-width="3" opacity="0.7"/>
+  <!-- gun mantlet -->
+  <rect x="286" y="102" width="50" height="56" rx="8" fill="url(#mant)" stroke="#262b16" stroke-width="4"/>
+  <!-- smoke dischargers -->
+  <g fill="#3a4124" stroke="#1f2312" stroke-width="2">
+    <circle cx="282" cy="44" r="7"/><circle cx="296" cy="56" r="7"/><circle cx="268" cy="34" r="7"/>
+    <circle cx="282" cy="216" r="7"/><circle cx="296" cy="204" r="7"/><circle cx="268" cy="226" r="7"/>
+  </g>
+  <!-- commander's cupola -->
+  <circle cx="132" cy="84" r="36" fill="#66733f" stroke="#262b16" stroke-width="4"/>
+  <circle cx="132" cy="84" r="24" fill="#7e8b50" stroke="#323a1e" stroke-width="3"/>
+  <g fill="#1d2113">
+    <rect x="160" y="78" width="12" height="12" rx="2"/><rect x="92" y="78" width="12" height="12" rx="2"/>
+    <rect x="126" y="44" width="12" height="12" rx="2"/><rect x="126" y="112" width="12" height="12" rx="2"/>
+  </g>
+  <!-- loader's hatch with machine gun -->
+  <rect x="104" y="150" width="58" height="50" rx="12" fill="#6d7a44" stroke="#262b16" stroke-width="4"/>
+  <path d="M150 175 H232" stroke="#22261a" stroke-width="7" stroke-linecap="round"/>
+  <!-- gunner's sight -->
+  <rect x="210" y="66" width="34" height="22" rx="4" fill="#3d4526" stroke="#1f2312" stroke-width="3"/>
+  <rect x="236" y="70" width="8" height="14" fill="#9fc8d8"/>
+  <!-- antennas -->
+  <circle cx="54" cy="70" r="6" fill="#22261a"/>
+  <circle cx="54" cy="190" r="6" fill="#22261a"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="40" viewBox="0 0 460 40">
+  <!-- Tank Lab main gun, starts 0.75 m in front of the turret pivot. -->
+  <defs>
+    <linearGradient id="tube" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b552d"/>
+      <stop offset="0.35" stop-color="#8b9759"/>
+      <stop offset="1" stop-color="#363d21"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="7" width="70" height="26" rx="4" fill="url(#tube)" stroke="#20240f" stroke-width="3"/>
+  <rect x="66" y="13" width="364" height="14" fill="url(#tube)" stroke="#20240f" stroke-width="2.5"/>
+  <rect x="210" y="8" width="74" height="24" rx="11" fill="url(#tube)" stroke="#20240f" stroke-width="2.5"/>
+  <rect x="424" y="9" width="36" height="22" rx="3" fill="#3f4727" stroke="#1b1f0d" stroke-width="2.5"/>
+  <rect x="432" y="9" width="5" height="22" fill="#1b1f0d"/>
+  <rect x="446" y="9" width="5" height="22" fill="#1b1f0d"/>
+</svg>

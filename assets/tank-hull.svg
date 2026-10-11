@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="270" viewBox="0 0 700 270">
+  <!-- Tank Lab "TL-96" hull, top view, front facing right. 1 unit = 1 cm. -->
+  <defs>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d9a5c"/>
+      <stop offset="0.45" stop-color="#717e46"/>
+      <stop offset="1" stop-color="#535d33"/>
+    </linearGradient>
+    <linearGradient id="glacis" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a864e"/>
+      <stop offset="1" stop-color="#9aa66a"/>
+    </linearGradient>
+    <linearGradient id="fender" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#626c3b"/>
+      <stop offset="1" stop-color="#454d29"/>
+    </linearGradient>
+    <pattern id="grille" width="9" height="9" patternUnits="userSpaceOnUse">
+      <rect width="9" height="9" fill="#434b29"/>
+      <rect width="9" height="4" fill="#262b17"/>
+    </pattern>
+  </defs>
+  <!-- fenders over the tracks -->
+  <rect x="6" y="1" width="688" height="22" rx="5" fill="url(#fender)" stroke="#2b3119" stroke-width="3"/>
+  <rect x="6" y="247" width="688" height="22" rx="5" fill="url(#fender)" stroke="#2b3119" stroke-width="3"/>
+  <!-- stowage boxes on the fenders -->
+  <rect x="232" y="4" width="92" height="15" rx="2" fill="#4c5530" stroke="#2b3119" stroke-width="2"/>
+  <rect x="340" y="4" width="60" height="15" rx="2" fill="#4c5530" stroke="#2b3119" stroke-width="2"/>
+  <rect x="232" y="251" width="70" height="15" rx="2" fill="#4c5530" stroke="#2b3119" stroke-width="2"/>
+  <rect x="316" y="251" width="84" height="15" rx="2" fill="#4c5530" stroke="#2b3119" stroke-width="2"/>
+  <text x="440" y="17" font-family="monospace" font-size="13" font-weight="bold" fill="#e2dec8" opacity="0.85">TL-96</text>
+  <!-- main hull -->
+  <path d="M28 22 H585 L682 60 V210 L585 248 H28 Q12 248 12 232 V38 Q12 22 28 22 Z" fill="url(#hull)" stroke="#262b16" stroke-width="4"/>
+  <!-- glacis plate -->
+  <path d="M585 22 L682 60 V210 L585 248 Z" fill="url(#glacis)" stroke="#2a3019" stroke-width="3"/>
+  <path d="M600 40 L668 68 M600 230 L668 202" stroke="#5e6a3a" stroke-width="3"/>
+  <!-- headlights and tow hooks -->
+  <circle cx="667" cy="76" r="8" fill="#ece6c4" stroke="#3a3f26" stroke-width="3"/>
+  <circle cx="667" cy="194" r="8" fill="#ece6c4" stroke="#3a3f26" stroke-width="3"/>
+  <rect x="680" y="100" width="12" height="16" rx="3" fill="#2f3520"/>
+  <rect x="680" y="154" width="12" height="16" rx="3" fill="#2f3520"/>
+  <!-- driver's hatch with periscopes -->
+  <rect x="520" y="102" width="46" height="66" rx="10" fill="#5f6a3b" stroke="#2f3720" stroke-width="3"/>
+  <circle cx="543" cy="135" r="14" fill="#6d7945" stroke="#2f3720" stroke-width="2"/>
+  <rect x="568" y="112" width="10" height="14" fill="#1f2414"/>
+  <rect x="568" y="128" width="10" height="14" fill="#1f2414"/>
+  <rect x="568" y="144" width="10" height="14" fill="#1f2414"/>
+  <!-- weld lines -->
+  <path d="M215 26 V244 M420 26 V244" stroke="#59643a" stroke-width="3" opacity="0.8"/>
+  <!-- turret ring -->
+  <circle cx="315" cy="135" r="104" fill="#59643a" stroke="#2c3219" stroke-width="4"/>
+  <!-- engine deck -->
+  <rect x="30" y="40" width="172" height="190" rx="10" fill="#5b6638" stroke="#2c3219" stroke-width="3"/>
+  <rect x="44" y="56" width="144" height="64" rx="4" fill="url(#grille)" stroke="#262b16" stroke-width="2"/>
+  <rect x="44" y="150" width="144" height="64" rx="4" fill="url(#grille)" stroke="#262b16" stroke-width="2"/>
+  <circle cx="116" cy="135" r="11" fill="#6c7845" stroke="#2c3219" stroke-width="2"/>
+  <!-- exhausts and jerry cans on the rear plate -->
+  <rect x="12" y="66" width="16" height="34" rx="3" fill="#2b2a25"/>
+  <rect x="12" y="170" width="16" height="34" rx="3" fill="#2b2a25"/>
+  <rect x="16" y="108" width="20" height="24" rx="3" fill="#69753f" stroke="#2c3219" stroke-width="2"/>
+  <rect x="16" y="138" width="20" height="24" rx="3" fill="#69753f" stroke="#2c3219" stroke-width="2"/>
+  <!-- highlight edge -->
+  <path d="M30 26 H584" stroke="#b3bf80" stroke-width="3" opacity="0.6"/>
+</svg>
